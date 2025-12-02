@@ -1,1 +1,253 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>FCBREO Ledenportaal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- LOGIN SCHERM -->
+  <div class="login-wrapper" id="login-wrapper">
+    <div class="login-card">
+      <img src="logo-fcbreo.png" alt="Coöperatie FCBREO" class="login-logo">
+      <h1>FCBREO nieuwsportaal</h1>
+
+      <form id="login-form">
+        <label for="username">Gebruikersnaam</label>
+        <input type="text" id="username" autocomplete="username" placeholder="FCBREO">
+
+        <label for="password">Wachtwoord</label>
+        <input type="password" id="password" autocomplete="current-password" placeholder="wachtwoord">
+
+        <button type="submit">Inloggen</button>
+
+        <p class="login-help">
+          Voor intern gebruik: gebruikersnaam <strong>FCBREO</strong> en wachtwoord <strong>cooperatie2026</strong>.
+        </p>
+
+        <p class="login-error" id="login-error"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- HOOFD SITE -->
+  <div class="app-wrapper" id="app-wrapper" aria-hidden="true">
+    <header class="topbar">
+      <div class="topbar-left">
+        <img src="logo-fcbreo.png" alt="Coöperatie FCBREO" class="topbar-logo">
+        <span class="topbar-title">FCBREO ledenportaal</span>
+      </div>
+      <nav class="topbar-nav">
+        <button class="nav-btn active" data-target="nieuws">Nieuws</button>
+        <button class="nav-btn" data-target="werkgroepen">Werkgroepen</button>
+        <button class="nav-btn" data-target="projecten">Projecten</button>
+      </nav>
+    </header>
+
+    <main class="content">
+      <!-- NIEUWS -->
+      <section id="section-nieuws" class="section active">
+        <h2>Nieuws</h2>
+        <div class="card-list">
+          <!-- Voorbeeld nieuwsblok 1 -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Start nieuwsbrief FCBREO</h3>
+              <p class="card-meta">Datum: 1 januari 2026</p>
+              <p>
+                Via dit ledenportaal delen we voortaan nieuws, verslagen en uitnodigingen met alle
+                partners binnen FCBREO. De nieuwsitems verschijnen hier onder elkaar in overzichtelijke blokken.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Nieuws" alt="Nieuwsafbeelding">
+            </div>
+          </article>
+
+          <!-- Voorbeeld nieuwsblok 2 -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Regionale bijeenkomst FCBREO</h3>
+              <p class="card-meta">Datum: 15 februari 2026</p>
+              <p>
+                Tijdens de regionale bijeenkomst brengen we de stand van zaken van de projecten in beeld en
+                bespreken we de voortgang binnen de vijf werkgroepen.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Bijeenkomst" alt="Bijeenkomst">
+            </div>
+          </article>
+
+          <!-- Hier kun je eenvoudig nieuwe nieuwsblokken toevoegen.
+               Kopieer een <article class="card">...</article> en pas de inhoud aan. -->
+        </div>
+      </section>
+
+      <!-- WERKGROEPEN -->
+      <section id="section-werkgroepen" class="section">
+        <h2>Werkgroepen</h2>
+        <p class="section-intro">
+          Hieronder vind je nieuws en updates per werkgroep. Per blok kun je specifieke berichten,
+          afspraken en documenten toevoegen.
+        </p>
+
+        <div class="card-list">
+          <!-- Kansrijk opgroeien -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Kansrijk opgroeien</h3>
+              <p class="card-meta">Werkgroep</p>
+              <p>
+                Focus op een gezonde en kansrijke start voor kinderen en jongeren in Breda en omgeving.
+                Hier kun je nieuws plaatsen over lopende initiatieven, pilots en samenwerkingsafspraken.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Kansrijk+opgroeien" alt="Kansrijk opgroeien">
+            </div>
+          </article>
+
+          <!-- Mentale gezondheid -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Mentale gezondheid</h3>
+              <p class="card-meta">Werkgroep</p>
+              <p>
+                Deze werkgroep richt zich op het versterken van mentale veerkracht en het verbeteren
+                van de aansluiting tussen zorg, onderwijs en sociaal domein.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Mentale+gezondheid" alt="Mentale gezondheid">
+            </div>
+          </article>
+
+          <!-- Leefstijl / leefomgeving en kansengelijkheid -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Leefstijl / leefomgeving en kansengelijkheid</h3>
+              <p class="card-meta">Werkgroep</p>
+              <p>
+                Hier kunnen berichten staan over leefstijlprogramma’s, gezonde wijken, sport- en
+                beweeginitiatieven en het verkleinen van gezondheidsverschillen.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Leefstijl+en+kansen" alt="Leefstijl en kansengelijkheid">
+            </div>
+          </article>
+
+          <!-- Kwetsbare ouderen -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Kwetsbare ouderen</h3>
+              <p class="card-meta">Werkgroep</p>
+              <p>
+                Gericht op het bevorderen van zelfstandigheid, vroegsignalering en passende ondersteuning
+                voor kwetsbare ouderen in de regio.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Kwetsbare+ouderen" alt="Kwetsbare ouderen">
+            </div>
+          </article>
+
+          <!-- Subsidies -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Subsidies</h3>
+              <p class="card-meta">Werkgroep</p>
+              <p>
+                Deze werkgroep volgt subsidiestromen, bewaakt deadlines en ondersteunt partners bij het
+                voorbereiden van aanvragen. Gebruik dit blok voor actuele regelingen en lopende aanvragen.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Subsidies" alt="Subsidies">
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTEN -->
+      <section id="section-projecten" class="section">
+        <h2>Projecten</h2>
+        <p class="section-intro">
+          Hieronder staan voorbeeldprojecten. Je kunt deze vervangen door eigen projecten en zo de
+          voortgang binnen FCBREO zichtbaar maken voor alle leden.
+        </p>
+
+        <div class="card-list">
+          <!-- Project 1 -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Project 1: Gezonde wijkpilot</h3>
+              <p class="card-meta">Voorbeeldproject</p>
+              <p>
+                Een gezamenlijke pilot waarin zorg, gemeente en onderwijs samenwerken aan een gezondere
+                leefomgeving in een geselecteerde wijk.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Project+1" alt="Project Gezonde wijkpilot">
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Project 2: Jongeren en mentale veerkracht</h3>
+              <p class="card-meta">Voorbeeldproject</p>
+              <p>
+                Programma gericht op het versterken van mentale veerkracht bij jongeren in het voortgezet
+                onderwijs, met aandacht voor signalering en doorverwijzing.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Project+2" alt="Project Jongeren en mentale veerkracht">
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Project 3: Valpreventie bij ouderen</h3>
+              <p class="card-meta">Voorbeeldproject</p>
+              <p>
+                Samenwerking tussen eerste lijn, welzijn en gemeente om valincidenten onder ouderen terug
+                te dringen.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Project+3" alt="Project Valpreventie">
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="card">
+            <div class="card-text">
+              <h3>Project 4: Kansrijk opgroeien in de regio</h3>
+              <p class="card-meta">Voorbeeldproject</p>
+              <p>
+                Regionaal programma rondom kansengelijkheid, taal, beweging en gezonde leefstijl bij
+                kinderen en hun gezinnen.
+              </p>
+            </div>
+            <div class="card-image-wrapper">
+              <img src="https://via.placeholder.com/320x200?text=Project+4" alt="Project Kansrijk opgroeien">
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>FCBREO &mdash; intern ledenportaal</p>
+    </footer>
+  </div>
+</body>
+</html>
 
