@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const navButtons = document.querySelectorAll(".nav-btn");
   const sections = document.querySelectorAll(".section");
 
-  // Kijk of er al een geldige "login" in deze browser is
+  // Controleer of er al een geldige login in deze browser is
   const isLoggedIn = sessionStorage.getItem("fcbreo-logged-in") === "true";
   if (isLoggedIn) {
     showApp();
   }
 
-  // LOGIN HANDLING
+  // LOGIN AFHANDELEN
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
