@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
+
 <body>
+
   <!-- LOGIN SCHERM -->
   <div class="login-wrapper" id="login-wrapper">
     <div class="login-card">
@@ -19,7 +21,10 @@
         <input type="text" id="username" autocomplete="username">
 
         <label for="password">Wachtwoord</label>
-        <input type="password" id="password" autocomplete="current-password" placeholder="wachtwoord">
+        <div class="password-field">
+          <input type="password" id="password" autocomplete="current-password">
+          <button type="button" id="toggle-password" class="toggle-password-btn" aria-label="Toon of verberg wachtwoord">Toon</button>
+        </div>
 
         <button type="submit">Inloggen</button>
 
@@ -28,290 +33,245 @@
     </div>
   </div>
 
-  <!-- HOOFD SITE -->
+  <!-- APP -->
   <div class="app-wrapper" id="app-wrapper" aria-hidden="true">
+
+    <!-- TOPBAR -->
     <header class="topbar">
       <div class="topbar-left">
         <img src="logo-fcbreo.png" alt="Coöperatie FCBREO" class="topbar-logo">
         <span class="topbar-title">FCBREO ledenportaal</span>
       </div>
+
       <nav class="topbar-nav">
         <button class="nav-btn active" data-target="nieuws">Nieuws</button>
         <button class="nav-btn" data-target="werkgroepen">Werkgroepen</button>
         <button class="nav-btn" data-target="projecten">Projecten</button>
+        <button class="nav-btn nav-btn-logout" id="logout-btn" type="button">Uitloggen</button>
       </nav>
     </header>
 
+    <!-- CONTENT -->
     <main class="content">
+
       <!-- NIEUWS -->
       <section id="section-nieuws" class="section active">
         <h2>Nieuws</h2>
+
         <div class="card-list">
-          <!-- Nieuwsblok 1 -->
+
+          <!-- Blok 1 -->
           <article class="card">
             <div class="card-text">
               <h3>Start nieuwsbrief FCBREO</h3>
               <p class="card-meta">Datum: 1 januari 2026</p>
               <p>
                 Via dit ledenportaal delen we voortaan nieuws, verslagen en uitnodigingen met alle
-                partners binnen FCBREO. De nieuwsitems verschijnen hier onder elkaar in overzichtelijke blokken.
+                partners binnen FCBREO.
               </p>
             </div>
             <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Nieuws" alt="Nieuwsafbeelding">
+              <img src="https://via.placeholder.com/320x200?text=Nieuws" alt="">
             </div>
           </article>
 
-          <!-- Nieuwsblok 2: Google Docs - Nieuwsbrief FCBREO -->
+          <!-- Blok 2: Google Docs nieuwsbrief -->
           <article class="card">
             <div class="card-text">
               <h3>Nieuwsbrief FCBREO</h3>
               <p class="card-meta">Automatisch bijgewerkt vanuit Google Docs</p>
+
               <iframe
                 class="doc-frame"
                 src="https://docs.google.com/document/d/1wz1gLEAbhYFRSKVfjdiu4d_yrpN9LZShDJ59A3EtqE8/preview"
                 loading="lazy"
-                allowfullscreen
-              ></iframe>
+                allowfullscreen>
+              </iframe>
             </div>
           </article>
 
-          <!-- Hier kun je eenvoudig nieuwe nieuwsblokken toevoegen.
-               Kopieer een <article class="card">...</article> en pas de inhoud aan. -->
         </div>
       </section>
+
 
       <!-- WERKGROEPEN -->
       <section id="section-werkgroepen" class="section">
         <h2>Werkgroepen</h2>
         <p class="section-intro">
-          Hieronder vind je nieuws en updates per werkgroep. Per blok kun je specifieke berichten,
-          afspraken en documenten toevoegen.
+          Hieronder vind je nieuws en updates per werkgroep.
         </p>
 
         <div class="card-list">
+
           <!-- Kansrijk opgroeien -->
           <article class="card">
             <div class="card-text">
               <h3>Kansrijk opgroeien</h3>
               <p class="card-meta">Werkgroep</p>
-              <p>
-                Focus op een gezonde en kansrijke start voor kinderen en jongeren in Breda en omgeving.
-                Hier kun je nieuws plaatsen over lopende initiatieven, pilots en samenwerkingsafspraken.
-              </p>
+              <p>Nieuws over initiatieven, pilots en samenwerkingen.</p>
             </div>
             <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Kansrijk+opgroeien" alt="Kansrijk opgroeien">
+              <img src="https://via.placeholder.com/320x200?text=Kansrijk+opgroeien">
             </div>
           </article>
 
-          <!-- Nieuws Kansrijk opgroeien (Google Docs) -->
+          <!-- Kansrijk opgroeien - Nieuws -->
           <article class="card">
             <div class="card-text">
               <h3>Nieuws Kansrijk opgroeien</h3>
-              <p class="card-meta">Automatisch bijgewerkt vanuit Google Docs</p>
-              <iframe
-                class="doc-frame"
-                src="https://docs.google.com/document/d/14Wgv9ycUv7OTz_lC2a78alzNRp9vaSWzUBI7vCF1J3U/preview"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+              <p class="card-meta">Automatisch vanuit Google Docs</p>
+              <iframe class="doc-frame"
+                src="https://docs.google.com/document/d/14Wgv9ycUv7OTz_lC2a78alzNRp9vaSWzUBI7vCF1J3U/preview"></iframe>
             </div>
           </article>
+
 
           <!-- Mentale gezondheid -->
           <article class="card">
             <div class="card-text">
               <h3>Mentale gezondheid</h3>
               <p class="card-meta">Werkgroep</p>
-              <p>
-                Deze werkgroep richt zich op het versterken van mentale veerkracht en het verbeteren
-                van de aansluiting tussen zorg, onderwijs en sociaal domein.
-              </p>
+              <p>Focus op mentale veerkracht en samenwerking zorg/onderwijs.</p>
             </div>
             <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Mentale+gezondheid" alt="Mentale gezondheid">
+              <img src="https://via.placeholder.com/320x200?text=Mentale+gezondheid">
             </div>
           </article>
 
-          <!-- Nieuws Mentale gezondheid (Google Docs) -->
+          <!-- Mentale gezondheid - Nieuws -->
           <article class="card">
             <div class="card-text">
               <h3>Nieuws Mentale gezondheid</h3>
-              <p class="card-meta">Automatisch bijgewerkt vanuit Google Docs</p>
-              <iframe
-                class="doc-frame"
-                src="https://docs.google.com/document/d/16BH0KmnyHZFGUQJxCWG2oBkCvh73St4U89fnOf3dNSE/preview"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+              <p class="card-meta">Automatisch vanuit Google Docs</p>
+              <iframe class="doc-frame"
+                src="https://docs.google.com/document/d/16BH0KmnyHZFGUQJxCWG2oBkCvh73St4U89fnOf3dNSE/preview"></iframe>
             </div>
           </article>
 
-          <!-- Leefstijl / leefomgeving en kansengelijkheid -->
+
+          <!-- Leefstijl / leefomgeving -->
           <article class="card">
             <div class="card-text">
               <h3>Leefstijl / leefomgeving en kansengelijkheid</h3>
               <p class="card-meta">Werkgroep</p>
-              <p>
-                Hier kunnen berichten staan over leefstijlprogramma’s, gezonde wijken, sport- en
-                beweeginitiatieven en het verkleinen van gezondheidsverschillen.
-              </p>
+              <p>Nieuws over leefstijlprogramma's en gezonde wijken.</p>
             </div>
             <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Leefstijl+en+kansen" alt="Leefstijl en kansengelijkheid">
+              <img src="https://via.placeholder.com/320x200?text=Leefstijl+en+kansen">
             </div>
           </article>
 
-          <!-- Nieuws Leefstijl / leefomgeving en kansengelijkheid (Google Docs) -->
+          <!-- Nieuws Leefstijl -->
           <article class="card">
             <div class="card-text">
-              <h3>Nieuws Leefstijl / leefomgeving en kansengelijkheid</h3>
-              <p class="card-meta">Automatisch bijgewerkt vanuit Google Docs</p>
-              <iframe
-                class="doc-frame"
-                src="https://docs.google.com/document/d/1mzWXqABHdm1YuTJEJAlT6qFVXm3qca1EbQaEMRxsN-g/preview"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+              <h3>Nieuws Leefstijl / leefomgeving</h3>
+              <p class="card-meta">Automatisch vanuit Google Docs</p>
+              <iframe class="doc-frame"
+                src="https://docs.google.com/document/d/1mzWXqABHdm1YuTJEJAlT6qFVXm3qca1EbQaEMRxsN-g/preview"></iframe>
             </div>
           </article>
+
 
           <!-- Kwetsbare ouderen -->
           <article class="card">
             <div class="card-text">
               <h3>Kwetsbare ouderen</h3>
               <p class="card-meta">Werkgroep</p>
-              <p>
-                Gericht op het bevorderen van zelfstandigheid, vroegsignalering en passende ondersteuning
-                voor kwetsbare ouderen in de regio.
-              </p>
+              <p>Nieuws over zelfstandigheid, vroegsignalering en ondersteuning.</p>
             </div>
             <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Kwetsbare+ouderen" alt="Kwetsbare ouderen">
+              <img src="https://via.placeholder.com/320x200?text=Kwetsbare+ouderen">
             </div>
           </article>
 
-          <!-- Nieuws Kwetsbare ouderen (Google Docs) -->
+          <!-- Nieuws Kwetsbare ouderen -->
           <article class="card">
             <div class="card-text">
               <h3>Nieuws Kwetsbare ouderen</h3>
-              <p class="card-meta">Automatisch bijgewerkt vanuit Google Docs</p>
-              <iframe
-                class="doc-frame"
-                src="https://docs.google.com/document/d/11I-HAW4anGhJvKfob0ZK7tvogH0R0hq0ooLWJHBDxyA/preview"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+              <p class="card-meta">Automatisch vanuit Google Docs</p>
+              <iframe class="doc-frame"
+                src="https://docs.google.com/document/d/11I-HAW4anGhJvKfob0ZK7tvogH0R0hq0ooLWJHBDxyA/preview"></iframe>
             </div>
           </article>
+
 
           <!-- Subsidies -->
           <article class="card">
             <div class="card-text">
               <h3>Subsidies</h3>
               <p class="card-meta">Werkgroep</p>
-              <p>
-                Deze werkgroep volgt subsidiestromen, bewaakt deadlines en ondersteunt partners bij het
-                voorbereiden van aanvragen. Gebruik dit blok voor actuele regelingen en lopende aanvragen.
-              </p>
+              <p>Nieuws over subsidiestromen en aanvragen.</p>
             </div>
             <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Subsidies" alt="Subsidies">
+              <img src="https://via.placeholder.com/320x200?text=Subsidies">
             </div>
           </article>
 
-          <!-- Nieuws Subsidies (Google Docs) -->
+          <!-- Nieuws Subsidies -->
           <article class="card">
             <div class="card-text">
               <h3>Nieuws Subsidies</h3>
-              <p class="card-meta">Automatisch bijgewerkt vanuit Google Docs</p>
-              <iframe
-                class="doc-frame"
-                src="https://docs.google.com/document/d/104x_88tuOcRBAt0DmN2t7N52TFcKdgrwk-7e3T6TMyA/preview"
-                loading="lazy"
-                allowfullscreen
-              ></iframe>
+              <p class="card-meta">Automatisch vanuit Google Docs</p>
+              <iframe class="doc-frame"
+                src="https://docs.google.com/document/d/104x_88tuOcRBAt0DmN2t7N52TFcKdgrwk-7e3T6TMyA/preview"></iframe>
             </div>
           </article>
+
         </div>
       </section>
+
 
       <!-- PROJECTEN -->
       <section id="section-projecten" class="section">
         <h2>Projecten</h2>
         <p class="section-intro">
-          Hieronder staan voorbeeldprojecten. Je kunt deze vervangen door eigen projecten en zo de
-          voortgang binnen FCBREO zichtbaar maken voor alle leden.
+          Voorbeeldprojecten — kan worden aangepast.
         </p>
 
         <div class="card-list">
-          <!-- Project 1 -->
+
           <article class="card">
             <div class="card-text">
               <h3>Project 1: Gezonde wijkpilot</h3>
               <p class="card-meta">Voorbeeldproject</p>
-              <p>
-                Een gezamenlijke pilot waarin zorg, gemeente en onderwijs samenwerken aan een gezondere
-                leefomgeving in een geselecteerde wijk.
-              </p>
+              <p>Een pilot in samenwerking met gemeente, zorg en onderwijs.</p>
             </div>
             <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Project+1" alt="Project Gezonde wijkpilot">
+              <img src="https://via.placeholder.com/320x200?text=Project+1">
             </div>
           </article>
 
-          <!-- Project 2 -->
           <article class="card">
             <div class="card-text">
               <h3>Project 2: Jongeren en mentale veerkracht</h3>
               <p class="card-meta">Voorbeeldproject</p>
-              <p>
-                Programma gericht op het versterken van mentale veerkracht bij jongeren in het voortgezet
-                onderwijs, met aandacht voor signalering en doorverwijzing.
-              </p>
+              <p>Focus op mentale kracht en doorverwijzing.</p>
             </div>
             <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Project+2" alt="Project Jongeren en mentale veerkracht">
+              <img src="https://via.placeholder.com/320x200?text=Project+2">
             </div>
           </article>
 
-          <!-- Project 3 -->
           <article class="card">
             <div class="card-text">
               <h3>Project 3: Valpreventie bij ouderen</h3>
               <p class="card-meta">Voorbeeldproject</p>
-              <p>
-                Samenwerking tussen eerste lijn, welzijn en gemeente om valincidenten onder ouderen terug
-                te dringen.
-              </p>
+              <p>Samenwerking waarin valincidenten worden teruggedrongen.</p>
             </div>
             <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Project+3" alt="Project Valpreventie">
+              <img src="https://via.placeholder.com/320x200?text=Project+3">
             </div>
           </article>
 
-          <!-- Project 4 -->
-          <article class="card">
-            <div class="card-text">
-              <h3>Project 4: Kansrijk opgroeien in de regio</h3>
-              <p class="card-meta">Voorbeeldproject</p>
-              <p>
-                Regionaal programma rondom kansengelijkheid, taal, beweging en gezonde leefstijl bij
-                kinderen en hun gezinnen.
-              </p>
-            </div>
-            <div class="card-image-wrapper">
-              <img src="https://via.placeholder.com/320x200?text=Project+4" alt="Project Kansrijk opgroeien">
-            </div>
-          </article>
         </div>
       </section>
+
     </main>
 
     <footer class="footer">
-      <p>FCBREO &mdash; intern ledenportaal</p>
+      <p>FCBREO — intern ledenportaal</p>
     </footer>
+
   </div>
 </body>
 </html>
