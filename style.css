@@ -230,6 +230,15 @@ body {
   object-fit: cover;
 }
 
+/* GOOGLE DOCS EMBEDS */
+.doc-frame {
+  width: 100%;
+  min-height: 400px;
+  border: 1px solid #d0d4dd;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+
 /* FOOTER */
 .footer {
   margin-top: auto;
